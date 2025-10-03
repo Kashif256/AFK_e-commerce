@@ -22,14 +22,12 @@
         overflow: hidden;
       }
 
-      /* Scene wrapper */
       .scene {
         position: relative;
         width: 320px;
         height: 320px;
       }
 
-      /* Glowing background circle */
       .glow {
         position: absolute;
         top: 50%;
@@ -56,7 +54,6 @@
         }
       }
 
-      /* Orbit container */
       .orbit {
         position: absolute;
         top: 50%;
@@ -68,7 +65,6 @@
         animation: rotate 25s linear infinite;
       }
 
-      /* Orbit animation */
       @keyframes rotate {
         0% {
           transform: rotate(0deg);
@@ -78,7 +74,6 @@
         }
       }
 
-      /* Particles styling */
       .particle {
         position: absolute;
         width: 14px;
@@ -104,7 +99,6 @@
         transform: rotate(270deg);
       }
 
-      /* Initials styling */
       .initial {
         position: absolute;
         width: 24px;
@@ -118,7 +112,6 @@
         transform: rotate(calc(var(--i) * 120deg));
       }
 
-      /* Login Circle */
       .login-circle {
         position: absolute;
         top: 50%;
@@ -153,7 +146,6 @@
         letter-spacing: 1px;
       }
 
-      /* Form styling */
       .login-circle form {
         display: flex;
         flex-direction: column;
@@ -201,7 +193,6 @@
         box-shadow: 0 0 20px #00ffff;
       }
 
-      /* Responsive adjustments */
       @media (max-width: 350px) {
         .scene {
           width: 260px;
@@ -250,7 +241,7 @@
       </div>
       <div class="login-circle">
         <h2>Welcome</h2>
-        <form action="home.html" method="post">
+        <form id="loginForm">
           <input type="text" placeholder="Username" required />
           <input type="password" placeholder="Password" required />
           <button type="submit">Login</button>
@@ -266,5 +257,13 @@
         </form>
       </div>
     </div>
+
+    <script>
+      // Force redirect to home.html on form submit
+      document.getElementById("loginForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // stop default
+        window.location.href = "home.html"; // redirect
+      });
+    </script>
   </body>
 </html>
