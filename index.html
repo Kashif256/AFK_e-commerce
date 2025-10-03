@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Futuristic Login</title>
-    <link rel="stylesheet" href="home.html" />
     <style>
       * {
         box-sizing: border-box;
@@ -251,14 +250,10 @@
       </div>
       <div class="login-circle">
         <h2>Welcome</h2>
-        <form
-          action="home.html"
-          method="post"
-          onsubmit="return validateEmail()"
-        >
+        <form action="home.html" method="post">
           <input type="text" placeholder="Username" required />
           <input type="password" placeholder="Password" required />
-          <a href="home.html"> <button type="submit" href="home.html">Login</button></a>
+          <button type="submit">Login</button>
           <p style="margin-top: 15px; color: #aaa; font-size: 14px">
             Don't have an account?
             <a
