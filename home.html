@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Digital Clock -->
+    <div id="digitalClock"></div>
+
+    <header>
+        <img class="team-logo" src="team logo.jpg">
+        <div class="logo">AFK.in</div>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="food.html">Food</a></li>
+                <li><a href="clothes.html">Clothes</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="furniture.html">Furniture</a></li>
+                <li><a href="electronics.html">Electronics</a></li>
+              
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 style="color: aqua">Welcome to AFK Store!</h1>
+        <p>Choose a category to explore the best products.</p>
+        <div class="categories">
+            <div class="category"><a class="section" href="about.html">About</a></div>
+            <div class="category"><a class="section" href="food.html">Food</a></div>
+            <div class="category"><a class="section" href="clothes.html">Clothes</a></div>
+            <div class="category"><a class="section" href="furniture.html">Furniture</a></div>
+            <div class="category"><a class="section" href="electronics.html">Electronics</a></div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="video-container">
+            <h2>Watch Our Store Intro</h2>
+            <video id="myVideo" src="AFK_screenrecording.mp4"></video>
+            <div class="controls">
+                <button id="playPause">Play</button>
+                <button id="resume">Restart</button>
+                <button id="normalSpeed">1x Speed</button>
+                <button id="doubleSpeed">2x Speed</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const video = document.getElementById("myVideo");
+        const playPauseBtn = document.getElementById("playPause");
+        const resumeBtn = document.getElementById("resume");
+        const normalSpeedBtn = document.getElementById("normalSpeed");
+        const doubleSpeedBtn = document.getElementById("doubleSpeed");
+
+        playPauseBtn.addEventListener("click", () => {
+            if (video.paused) {
+                video.play();
+                playPauseBtn.textContent = "Pause";
+            } else {
+                video.pause();
+                playPauseBtn.textContent = "Play";
+            }
+        });
+
+        resumeBtn.addEventListener("click", () => {
+            video.currentTime = 0;
+            video.play();
+            playPauseBtn.textContent = "Pause";
+        });
+
+        normalSpeedBtn.addEventListener("click", () => {
+            video.playbackRate = 1;
+        });
+
+        doubleSpeedBtn.addEventListener("click", () => {
+            video.playbackRate = 2;
+        });
+
+        // Digital Clock
+        function updateClock() {
+            const clock = document.getElementById('digitalClock');
+            const now = new Date();
+
+            const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+            const dateStr = now.toLocaleDateString(undefined, options);
+
+            const timeStr = now.toLocaleTimeString(undefined, { hour12: false });
+
+            clock.textContent = `${dateStr} | ${timeStr}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>

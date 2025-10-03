@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Clothes</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="food.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">AFK.in</div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="clothes.html">Clothes</a></li>
+                <li><a href="furniture.html">Furniture</a></li>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="music.html">Music</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Clothes</h1>
+
+        <div class="large-display" id="largeDisplay" style="display: none;">
+            <button class="close-btn" onclick="closeLargeView()">×</button>
+            <img id="largeImage" src="" alt="Clothes Image">
+            <h2 id="largeName"></h2>
+            <p id="largeIngredients"></p>
+        </div>
+
+        <div class="food-grid">
+            <!-- 12 items -->
+            <div class="food-item" onclick="showLargeView('T-Shirt', 'Comfortable cotton t-shirt.', '$19.99', 't.jpg')">
+                <img src="t.jpg" alt="T-Shirt">
+                <h3>T-Shirt</h3>
+                <p>$19.99</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Jeans', 'Stylish denim jeans.', '$39.99', 'cargos.jpg')">
+                <img src="cargos.jpg" alt="Jeans">
+                <h3>Cargos</h3>
+                <p>$39.99</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Jacket', 'Warm winter jacket.', '$59.99', 'jacket.jpg')">
+                <img src="jacket.jpg" alt="Jacket">
+                <h3>Jacket</h3>
+                <p>$59.99</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Dress', 'Elegant evening dress.', '$89.99', 'shirt.jpg')">
+                <img src="shirt.jpg" alt="Dress">
+                <h3>Shirt</h3>
+                <p>$89.99</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Skirt', 'Floral summer skirt.', '$29.99', 'hoodiee.jpg')">
+                <img src="hoodiee.jpg" alt="Skirt">
+                <h3>Hoodie</h3>
+                <p>$29.99</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Sweater', 'Cozy knit sweater.', '$49.99', 'sweater.jpg')">
+                <img src="sweater.jpg" alt="Sweater">
+                <h3>Sweater</h3>
+                <p>$49.99</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Blazer', 'Sharp tailored blazer.', '$69.99', 'blazer.webp')">
+                <img src="blazer.webp" alt="Blazer">
+                <h3>Blazer</h3>
+                <p>$69.99</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Hat', 'Stylish summer hat.', '$14.99', 'kurta.jpg')">
+                <img src="kurta.jpg" alt="Hat">
+                <h3>Kurta</h3>
+                <p>$14.99</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Scarf', 'Elegant silk scarf.', '$24.99', 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=60')">
+                <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=60" alt="Scarf">
+                <h3>Scarf</h3>
+                <p>$24.99</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showLargeView(name, ingredients, price, imageUrl) {
+            document.getElementById('largeImage').src = imageUrl;
+            document.getElementById('largeName').innerText = name + " - " + price;
+            document.getElementById('largeIngredients').innerText = ingredients;
+            document.getElementById('largeDisplay').style.display = 'block';
+        }
+
+        function closeLargeView() {
+            document.getElementById('largeDisplay').style.display = 'none';
+        }
+
+        function likeFood(event) {
+            event.stopPropagation();
+            alert("You liked this item!");
+        }
+
+        function orderFood(event) {
+            event.stopPropagation();
+            alert("Order placed!");
+        }
+
+        function addToCart(event) {
+            event.stopPropagation();
+            alert("Added to cart!");
+        }
+    let cart = [];
+    let totalAmount = 0;
+
+    function showLargeView(name, ingredients, price, imageUrl) {
+        document.getElementById('largeImage').src = imageUrl;
+        document.getElementById('largeName').innerText = name + " - " + price;
+        document.getElementById('largeIngredients').innerText = ingredients;
+        document.getElementById('largeDisplay').style.display = 'block';
+    }
+
+    function closeLargeView() {
+        document.getElementById('largeDisplay').style.display = 'none';
+    }
+
+    function likeFood(event) {
+        event.stopPropagation();
+        alert("You liked this item!");
+    }
+
+    function orderFood(event) {
+        event.stopPropagation();
+        alert("Order placed!");
+    }
+
+    function addToCart(event) {
+        event.stopPropagation();
+        
+        const item = event.target.closest('.food-item');
+        const name = item.querySelector('h3').innerText;
+        const priceText = item.querySelector('p').innerText;
+        const price = parseFloat(priceText.replace('$',''));
+        
+        cart.push({ name, price });
+        totalAmount += price;
+        
+        alert(`${name} added to cart! Total: $${totalAmount.toFixed(2)}`);
+        
+        updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+        let cartDiv = document.getElementById('cartDisplay');
+        
+        if (!cartDiv) {
+            cartDiv = document.createElement('div');
+            cartDiv.id = 'cartDisplay';
+            cartDiv.style.position = 'fixed';
+            cartDiv.style.bottom = '20px';
+            cartDiv.style.right = '20px';
+            cartDiv.style.backgroundColor = '#fff';
+            cartDiv.style.padding = '10px 20px';
+            cartDiv.style.border = '1px solid #ccc';
+            cartDiv.style.borderRadius = '8px';
+            cartDiv.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+            cartDiv.style.fontFamily = 'Arial, sans-serif';
+            document.body.appendChild(cartDiv);
+        }
+        
+        let html = '<h4>Cart</h4><ul>';
+        cart.forEach(item => {
+            html += `<li>${item.name} - $${item.price.toFixed(2)}</li>`;
+        });
+        html += `</ul><strong>Total: $${totalAmount.toFixed(2)}</strong>`;
+        
+        cartDiv.innerHTML = html;
+    }
+    </script>
+</body>
+</html>

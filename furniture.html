@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Furniture</title>
+    <link rel="stylesheet" href="furniture.css" />
+</head>
+<body>
+    <header>
+        
+        <div class="logo">AFK.in</div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="clothes.html">Clothes</a></li>
+                <li><a href="furniture.html">Furniture</a></li>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="music.html">Music</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Furniture</h1>
+
+        <div class="large-display" id="largeDisplay" style="display: none;">
+            <button class="close-btn" onclick="closeLargeView()">×</button>
+            <img id="largeImage" src="" alt="Furniture Image">
+            <h2 id="largeName"></h2>
+            <p id="largeIngredients"></p>
+        </div>
+
+        <div class="food-grid">
+            <!-- 12 Furniture Items -->
+            <div class="food-item" onclick="showLargeView('Sofa', 'Comfortable 3-seater sofa.', '$499', 'https://tse2.mm.bing.net/th/id/OIP.BB8jqsXCBy0XGTJ6aprJ2QHaHa?pid=Api&P=0&h=180')">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.BB8jqsXCBy0XGTJ6aprJ2QHaHa?pid=Api&P=0&h=180" alt="Sofa">
+                <h3>Sofa</h3>
+                <p>$499</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Dining Table', 'Wooden dining table for six.', '$299', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=60')">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=60" alt="Dining Table">
+                <h3>Dining Table</h3>
+                <p>$299</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Bed', 'King-size bed with headboard.', '$799', 'https://tse2.mm.bing.net/th/id/OIP.2OrPTJSC9C765X8073tpkQHaHa?pid=Api&P=0&h=180')">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.2OrPTJSC9C765X8073tpkQHaHa?pid=Api&P=0&h=180" alt="Bed">
+                <h3>Bed</h3>
+                <p>$799</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Wardrobe', 'Spacious wardrobe with sliding doors.', '$399', 'https://tse1.mm.bing.net/th/id/OIP.kzXve0EDKypA8VHzySXhrQHaFL?pid=Api&P=0&h=180')">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.kzXve0EDKypA8VHzySXhrQHaFL?pid=Api&P=0&h=180" alt="Wardrobe">
+                <h3>Wardrobe</h3>
+                <p>$399</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Bookshelf', 'Modern bookshelf for your home.', '$149', 'https://tse2.mm.bing.net/th/id/OIP.eFWTJwtu2mfwSaG_75Ny9QHaHa?pid=Api&P=0&h=180')">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.eFWTJwtu2mfwSaG_75Ny9QHaHa?pid=Api&P=0&h=180" alt="Bookshelf">
+                <h3>Bookshelf</h3>
+                <p>$149</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Armchair', 'Elegant armchair for relaxing.', '$199', 'https://tse3.mm.bing.net/th/id/OIP.txF2mX15zY9_6USxPE0o5wHaHa?pid=Api&P=0&h=180')">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.txF2mX15zY9_6USxPE0o5wHaHa?pid=Api&P=0&h=180" alt="Armchair">
+                <h3>Armchair</h3>
+                <p>$199</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Coffee Table', 'Glass top coffee table.', '$129', 'https://tse3.mm.bing.net/th/id/OIP.2m-Apee0Ula9E6cxXSMFMAHaIJ?pid=Api&P=0&h=180')">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.2m-Apee0Ula9E6cxXSMFMAHaIJ?pid=Api&P=0&h=180" alt="Coffee Table">
+                <h3>Coffee Table</h3>
+                <p>$129</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Desk', 'Minimalist study desk.', '$179', 'https://tse2.mm.bing.net/th/id/OIP.kio-mexxGblC09XCVlUB-gHaHa?pid=Api&P=0&h=180')">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.kio-mexxGblC09XCVlUB-gHaHa?pid=Api&P=0&h=180" alt="Desk">
+                <h3>Desk</h3>
+                <p>$179</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('TV Stand', 'Wooden stand for TV.', '$99', 'https://tse3.mm.bing.net/th/id/OIP.axbBEYMymBtymyc3J4c_3AHaFj?pid=Api&P=0&h=180')">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.axbBEYMymBtymyc3J4c_3AHaFj?pid=Api&P=0&h=180" alt="TV Stand">
+                <h3>TV Stand</h3>
+                <p>$99</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Dresser', 'Spacious dresser with drawers.', '$159', 'https://tse3.mm.bing.net/th/id/OIP.Lk42u6-H2ZF1jTnDg7yssQHaHa?pid=Api&P=0&h=180')">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.Lk42u6-H2ZF1jTnDg7yssQHaHa?pid=Api&P=0&h=180" alt="Dresser">
+                <h3>Dresser</h3>
+                <p>$159</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Recliner', 'Comfortable recliner chair.', '$249', 'https://tse2.mm.bing.net/th/id/OIP.ENz-STkr9i2B2V1FYKcoQgHaHa?pid=Api&P=0&h=180')">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.ENz-STkr9i2B2V1FYKcoQgHaHa?pid=Api&P=0&h=180" alt="Recliner">
+                <h3>Recliner</h3>
+                <p>$249</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Cabinet', 'Storage cabinet with shelves.', '$129', 'https://tse2.mm.bing.net/th/id/OIP.V1cwurt-Cbg3gAAI-LSimAHaHa?pid=Api&P=0&h=180')">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.V1cwurt-Cbg3gAAI-LSimAHaHa?pid=Api&P=0&h=180" alt="Cabinet">
+                <h3>Cabinet</h3>
+                <p>$129</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showLargeView(name, ingredients, price, imageUrl) {
+            document.getElementById('largeImage').src = imageUrl;
+            document.getElementById('largeName').innerText = name + " - " + price;
+            document.getElementById('largeIngredients').innerText = ingredients;
+            document.getElementById('largeDisplay').style.display = 'block';
+        }
+
+        function closeLargeView() {
+            document.getElementById('largeDisplay').style.display = 'none';
+        }
+
+        function likeFood(event) {
+            event.stopPropagation();
+            alert("You liked this item!");
+        }
+
+        function orderFood(event) {
+            event.stopPropagation();
+            alert("Order placed!");
+        }
+
+        function addToCart(event) {
+            event.stopPropagation();
+            alert("Added to cart!");
+        }
+    let cart = [];
+    let totalAmount = 0;
+
+    function showLargeView(name, ingredients, price, imageUrl) {
+        document.getElementById('largeImage').src = imageUrl;
+        document.getElementById('largeName').innerText = name + " - " + price;
+        document.getElementById('largeIngredients').innerText = ingredients;
+        document.getElementById('largeDisplay').style.display = 'block';
+    }
+
+    function closeLargeView() {
+        document.getElementById('largeDisplay').style.display = 'none';
+    }
+
+    function likeFood(event) {
+        event.stopPropagation();
+        alert("You liked this item!");
+    }
+
+    function orderFood(event) {
+        event.stopPropagation();
+        alert("Order placed!");
+    }
+
+    function addToCart(event) {
+        event.stopPropagation();
+        
+        const item = event.target.closest('.food-item');
+        const name = item.querySelector('h3').innerText;
+        const priceText = item.querySelector('p').innerText;
+        const price = parseFloat(priceText.replace('$',''));
+        
+        cart.push({ name, price });
+        totalAmount += price;
+        
+        alert(`${name} added to cart! Total: $${totalAmount.toFixed(2)}`);
+        
+        updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+        let cartDiv = document.getElementById('cartDisplay');
+        
+        if (!cartDiv) {
+            cartDiv = document.createElement('div');
+            cartDiv.id = 'cartDisplay';
+            cartDiv.style.position = 'fixed';
+            cartDiv.style.bottom = '20px';
+            cartDiv.style.right = '20px';
+            cartDiv.style.backgroundColor = '#fff';
+            cartDiv.style.padding = '10px 20px';
+            cartDiv.style.border = '1px solid #ccc';
+            cartDiv.style.borderRadius = '8px';
+            cartDiv.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+            cartDiv.style.fontFamily = 'Arial, sans-serif';
+            document.body.appendChild(cartDiv);
+        }
+        
+        let html = '<h4>Cart</h4><ul>';
+        cart.forEach(item => {
+            html += `<li>${item.name} - $${item.price.toFixed(2)}</li>`;
+        });
+        html += `</ul><strong>Total: $${totalAmount.toFixed(2)}</strong>`;
+        
+        cartDiv.innerHTML = html;
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">AFK.in</div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="clothes.html">Clothes</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="furniture.html">Furniture</a></li>
+                <li><a href="electronics.html">Electronics</a></li>
+                
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>About Us</h1>
+        <div class="about-container">
+            <div class="about-grid">
+                <div class="about-item" onclick="showDetail('detail1')">
+                    <img src="C:\Users\kashi\OneDrive\Documents\Desktop\login1\faazil.jpg" alt="Person 1">
+                </div>
+                <div class="about-item" onclick="showDetail('detail2')">
+                    <img src="C:\Users\kashi\OneDrive\Documents\Desktop\login1\ammar.jpg" alt="Person 2">
+                </div>
+                <div class="about-item" onclick="showDetail('detail3')">
+                    <img src="C:\Users\kashi\OneDrive\Documents\Desktop\login1\kashif.jpg" alt="Person 3">
+                </div>
+            </div>
+
+            <!-- Details Section -->
+            <div class="detail" id="detail1">
+                <h4>Faazil Ammar</h4>
+                <p><strong>Role:</strong>Team Leader</p>
+                <p><strong>Department:</strong>Developer & Designer</p>
+                <p>Hi,This is Faazil Ammar.P passionate about design and user experience, always striving for elegance and simplicity.</p>
+            </div>
+            <div class="detail" id="detail2">
+                <h4>Ammar Saqib</h4>
+                <p><strong>Role:</strong> Team Member</p>
+                <p><strong>Department:</strong>Full Stack Developer</p>
+                <p>Ammar Saqib loves coding and problem-solving, with a focus on building efficient and scalable applications.</p>
+            </div>
+            <div class="detail" id="detail3">
+                <h4>Kashif</h4>
+                <p><strong>Role:</strong> Team Member</p>
+                <p><strong>Department:</strong>Developer & Tester</p>
+                <p>Kashif ensures smooth workflows and team coordination, aiming for excellence in every project and have a experience as a tester.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showDetail(id) {
+            const details = document.querySelectorAll('.detail');
+            details.forEach(detail => detail.style.display = 'none');
+
+            const selectedDetail = document.getElementById(id);
+            selectedDetail.style.display = 'block';
+            selectedDetail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+
+        function showDetail(id) {
+    try {
+        const details = document.querySelectorAll('.detail');
+        details.forEach(detail => detail.style.display = 'none');
+
+        const selectedDetail = document.getElementById(id);
+
+        // Throw error if the element is not found
+        if (!selectedDetail) throw new Error("Detail element not found!");
+
+        selectedDetail.style.display = 'block';
+        selectedDetail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (error) {
+        console.error("An error occurred in showDetail:", error);
+        alert("Oops! Something went wrong. Please try again.");
+    }
+}
+
+
+    </script>
+</body>
+</html>

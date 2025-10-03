@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Futuristic Login</title>
+    <link rel="stylesheet" href="" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body,
+      html {
+        height: 100%;
+        background: radial-gradient(circle at center, #000000, #0d0d0d);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      /* Scene wrapper */
+      .scene {
+        position: relative;
+        width: 320px;
+        height: 320px;
+      }
+
+      /* Glowing background circle */
+      .glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 280px;
+        height: 280px;
+        margin-left: -140px;
+        margin-top: -140px;
+        background: radial-gradient(
+          circle,
+          rgba(0, 255, 255, 0.2),
+          transparent 70%
+        );
+        border-radius: 50%;
+        animation: glowPulse 3s infinite alternate;
+      }
+
+      @keyframes glowPulse {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      /* Orbit container */
+      .orbit {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 240px;
+        height: 240px;
+        margin-left: -120px;
+        margin-top: -120px;
+        animation: rotate 25s linear infinite;
+      }
+
+      /* Orbit animation */
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Particles styling */
+      .particle {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background: #00ffff;
+        border-radius: 50%;
+        box-shadow: 0 0 15px #00ffff;
+        top: 50%;
+        left: 50%;
+        transform-origin: 0 -120px;
+      }
+
+      .particle:nth-child(1) {
+        transform: rotate(0deg);
+      }
+      .particle:nth-child(2) {
+        transform: rotate(90deg);
+      }
+      .particle:nth-child(3) {
+        transform: rotate(180deg);
+      }
+      .particle:nth-child(4) {
+        transform: rotate(270deg);
+      }
+
+      /* Initials styling */
+      .initial {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        color: #00ffff;
+        font-weight: bold;
+        text-shadow: 0 0 10px #00ffff;
+        top: 50%;
+        left: 50%;
+        transform-origin: 0 -120px;
+        transform: rotate(calc(var(--i) * 120deg));
+      }
+
+      /* Login Circle */
+      .login-circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 260px;
+        height: 260px;
+        margin-left: -130px;
+        margin-top: -130px;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(15px);
+        border: 2px solid rgba(0, 255, 255, 0.3);
+        border-radius: 10%;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+        animation: pulse 2.5s infinite alternate;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.03);
+        }
+      }
+
+      .login-circle h2 {
+        color: #00ffff;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Form styling */
+      .login-circle form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .login-circle input {
+        width: 75%;
+        padding: 12px;
+        margin: 12px 0;
+        border: none;
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(0, 255, 255, 0.2);
+        color: #fff;
+        font-size: 16px;
+        transition: 0.3s ease;
+      }
+
+      .login-circle input:focus {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid #00ffff;
+        outline: none;
+      }
+
+      .login-circle input::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      .login-circle button {
+        padding: 12px 40px;
+        margin-top: 20px;
+        border: 2px solid #00ffff;
+        background: linear-gradient(45deg, #00ffff, #0077aa);
+        color: #000;
+        font-weight: bold;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+      }
+
+      .login-circle button:hover {
+        background: linear-gradient(45deg, #0077aa, #00ffff);
+        transform: scale(1.05);
+        box-shadow: 0 0 20px #00ffff;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 350px) {
+        .scene {
+          width: 260px;
+          height: 260px;
+        }
+
+        .glow {
+          width: 220px;
+          height: 220px;
+          margin-left: -110px;
+          margin-top: -110px;
+        }
+
+        .orbit {
+          width: 180px;
+          height: 180px;
+          margin-left: -90px;
+          margin-top: -90px;
+        }
+
+        .login-circle {
+          width: 220px;
+          height: 220px;
+          margin-left: -110px;
+          margin-top: -110px;
+          padding: 20px;
+        }
+
+        .login-circle input {
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scene">
+      <div class="glow"></div>
+      <div class="orbit">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="initial" style="--i: 0">F</div>
+        <div class="initial" style="--i: 1">A</div>
+        <div class="initial" style="--i: 2">K</div>
+      </div>
+      <div class="login-circle">
+        <h2>Welcome</h2>
+        <form
+          action="home.html"
+          method="post"
+          onsubmit="return validateEmail()"
+        >
+          <input type="text" placeholder="Username" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+          <p style="margin-top: 15px; color: #aaa; font-size: 14px">
+            Don't have an account?
+            <a
+              href="signup.html"
+              style="color: #00ffff; text-decoration: none; font-weight: bold"
+            >
+              Sign Up
+            </a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

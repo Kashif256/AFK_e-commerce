@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music Player</title>
+  <link rel="stylesheet" href="music.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    
+    <div class="logo">AFK.in</div>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="clothes.html">Clothes</a></li>
+        <li><a href="furniture.html">Furniture</a></li>
+        <li><a href="electronics.html">Electronics</a></li>
+        <li><a href="music.html">Music</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="music-container">
+      <h1>🎶 AFK Music Player</h1>
+
+      <!-- Search -->
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search song...">
+        <button onclick="searchSong()">Search</button>
+      </div>
+
+      <!-- Playlist -->
+      <ul class="playlist" id="playlist">
+        <li onclick="playSong(0)">Song 1 - Chill Beats</li>
+        <li onclick="playSong(1)">Song 2 - Vibes</li>
+        <li onclick="playSong(2)">Song 3 - Energy</li>
+        <li onclick="playSong(3)">Song 4 - Relax</li>
+        <li onclick="playSong(4)">Song 5 - Focus</li>
+        <li onclick="playSong(5)">Song 6 - Party</li>
+        <li onclick="playSong(6)">Song 7 - Classic</li>
+      </ul>
+
+      <!-- Audio Player -->
+      <audio id="audioPlayer" controls>
+        <source src="C:\Users\kashi\OneDrive\Documents\Desktop\login1\Tum hi ho.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+
+      <!-- Controls -->
+      <div class="controls">
+        <button onclick="prevSong()">⏮ Prev</button>
+        <button onclick="togglePlay()">▶/⏸ Play/Pause</button>
+        <button onclick="resumeSong()">🔄 Restart</button>
+        <button onclick="nextSong()">⏭ Next</button>
+      </div>
+
+      <!-- Now Playing -->
+      <p id="nowPlaying">Now Playing: None</p>
+
+      <!-- Watch Video Button -->
+      <div class="video-link">
+        <button onclick="openVideo()">🎥 Watch Video</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const songs = [
+      { name: "Song 1 - Chill Beats", file: "C:\Users\kashi\OneDrive\Documents\Desktop\login1\Tum hi ho.mp3" },
+      { name: "Song 2 - Vibes", file: "songs/piya-ayeena2.mp3" },
+      { name: "Song 3 - Energy", file: "songs/sun-raha-haina.mp3" },
+      { name: "Song 4 - Relax", file: "songs/tum-hi-ho.mp3" },
+      { name: "Song 5 - Focus", file: "songs/yaarumilla.mp3" },
+      { name: "Song 6 - Party", file: "songs/hum-mar-jayenge.mp3" },
+      { name: "Song 7 - Classic", file: "songs/classic.mp3" }
+    ];
+
+    let currentSongIndex = 0;
+    const audioPlayer = document.getElementById("audioPlayer");
+    const searchInput = document.getElementById("searchInput");
+    const nowPlaying = document.getElementById("nowPlaying");
+
+    function loadSong(index) {
+      audioPlayer.src = songs[index].file;
+      audioPlayer.play();
+      nowPlaying.textContent = "Now Playing: " + songs[index].name;
+    }
+
+    function playSong(index) {
+      currentSongIndex = index;
+      loadSong(index);
+    }
+
+    function togglePlay() {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+      } else {
+        audioPlayer.pause();
+      }
+    }
+
+    function resumeSong() {
+      audioPlayer.currentTime = 0;
+      audioPlayer.play();
+    }
+
+    function nextSong() {
+      currentSongIndex = (currentSongIndex + 1) % songs.length;
+      loadSong(currentSongIndex);
+    }
+
+    function prevSong() {
+      currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+      loadSong(currentSongIndex);
+    }
+
+    function searchSong() {
+      const query = searchInput.value.toLowerCase();
+      const foundIndex = songs.findIndex(song => song.name.toLowerCase().includes(query));
+      if (foundIndex !== -1) {
+        playSong(foundIndex);
+      } else {
+        alert("Song not found 😢");
+      }
+    }
+
+    function openVideo() {
+      // Change this link to your preferred YouTube video
+      window.open("https://www.youtube.com/watch?v=Umqb9KENgmk&pp=ygU-aHVtIHRlcmUgYmluYSBhYiByZWggbmFoaSBzYWt0ZSB0ZXJlIGJpbmEga3lhIHdham9vZCBtZXJhIHNvbmc%3D", "_blank");
+    }
+  </script>
+</body>
+</html>

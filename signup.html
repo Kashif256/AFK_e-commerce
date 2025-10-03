@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Futuristic Sign Up</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body,
+      html {
+        height: 100%;
+        background: radial-gradient(circle at center, #000000, #0d0d0d);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .scene {
+        position: relative;
+        width: 320px;
+        height: 320px;
+      }
+
+      .glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 280px;
+        height: 280px;
+        margin-left: -140px;
+        margin-top: -140px;
+        background: radial-gradient(
+          circle,
+          rgba(0, 255, 255, 0.2),
+          transparent 70%
+        );
+        border-radius: 50%;
+        animation: glowPulse 3s infinite alternate;
+      }
+
+      @keyframes glowPulse {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      .orbit {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 240px;
+        height: 240px;
+        margin-left: -120px;
+        margin-top: -120px;
+        animation: rotate 25s linear infinite;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .particle {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background: #00ffff;
+        border-radius: 50%;
+        box-shadow: 0 0 15px #00ffff;
+        top: 50%;
+        left: 50%;
+        transform-origin: 0 -120px;
+      }
+
+      .particle:nth-child(1) {
+        transform: rotate(0deg);
+      }
+      .particle:nth-child(2) {
+        transform: rotate(90deg);
+      }
+      .particle:nth-child(3) {
+        transform: rotate(180deg);
+      }
+      .particle:nth-child(4) {
+        transform: rotate(270deg);
+      }
+
+      .login-circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 280px;
+        height: auto;
+        margin-left: -140px;
+        margin-top: -160px;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(15px);
+        border: 2px solid rgba(0, 255, 255, 0.3);
+        border-radius: 10%;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+        animation: pulse 2.5s infinite alternate;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.03);
+        }
+      }
+
+      .login-circle h2 {
+        color: #00ffff;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .login-circle form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .login-circle input {
+        width: 80%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(0, 255, 255, 0.2);
+        color: #fff;
+        font-size: 16px;
+        transition: 0.3s ease;
+      }
+
+      .login-circle input:focus {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid #00ffff;
+        outline: none;
+      }
+
+      .login-circle input::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      .login-circle button {
+        padding: 12px 40px;
+        margin-top: 15px;
+        border: 2px solid #00ffff;
+        background: linear-gradient(45deg, #00ffff, #0077aa);
+        color: #000;
+        font-weight: bold;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+      }
+
+      .login-circle button:hover {
+        background: linear-gradient(45deg, #0077aa, #00ffff);
+        transform: scale(1.05);
+        box-shadow: 0 0 20px #00ffff;
+      }
+
+      .login-circle p {
+        margin-top: 15px;
+        color: #aaa;
+        font-size: 14px;
+      }
+
+      .login-circle a {
+        color: #00ffff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      @media (max-width: 350px) {
+        .scene {
+          width: 260px;
+          height: 260px;
+        }
+        .glow {
+          width: 220px;
+          height: 220px;
+          margin-left: -110px;
+          margin-top: -110px;
+        }
+        .orbit {
+          width: 180px;
+          height: 180px;
+          margin-left: -90px;
+          margin-top: -90px;
+        }
+        .login-circle {
+          width: 230px;
+          margin-left: -115px;
+          margin-top: -140px;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scene">
+      <div class="glow"></div>
+      <div class="orbit">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+      <div class="login-circle">
+        <h2>Create Account</h2>
+        <form
+          action="home.html"
+          method="post"
+          onsubmit="return validateSignup()"
+        >
+          <input type="text" id="name" placeholder="Full Name" required />
+          <input type="text" id="email" placeholder="Email" required />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+            required
+          />
+          <button type="submit">Sign Up</button>
+          <p>Already have an account? <a href="loginpage.html">Login</a></p>
+        </form>
+      </div>
+    </div>
+    <script>
+      function validateSignup() {
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let confirmPassword = document.getElementById("confirmPassword").value;
+
+        let pattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+
+        if (!pattern.test(email)) { 
+          alert("Invalid email address.");
+          return false;
+        }
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match!");
+          return false;
+        }
+
+        return true; // allow submission
+      }
+    </script>
+  </body>
+</html>

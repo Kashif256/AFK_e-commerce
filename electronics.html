@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Electronics</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="food.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">AFK.in</div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="clothes.html">Clothes</a></li>
+                <li><a href="furniture.html">Furniture</a></li>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Electronics</h1>
+
+        <div class="large-display" id="largeDisplay" style="display: none;">
+            <button class="close-btn" onclick="closeLargeView()">×</button>
+            <img id="largeImage" src="" alt="Electronics Image">
+            <h2 id="largeName"></h2>
+            <p id="largeIngredients"></p>
+        </div>
+
+        <div class="food-grid">
+            <!-- 12 items -->
+            <div class="food-item" onclick="showLargeView('Smartphone', 'Latest model with advanced features.', '$699', 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=60')">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=60" alt="Smartphone">
+                <h3>Smartphone</h3>
+                <p>$699</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Laptop', 'High-performance laptop.', '$999', 'https://tse1.mm.bing.net/th/id/OIP.13LP7iSRfenGZFCrHZU_rgHaEc?pid=Api&P=0&h=180')">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.13LP7iSRfenGZFCrHZU_rgHaEc?pid=Api&P=0&h=180" alt="Laptop">
+                <h3>Laptop</h3>
+                <p>$999</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Headphones', 'Noise-cancelling headphones.', '$199', 'https://tse1.mm.bing.net/th/id/OIP.bibA5oMY6WYu_uvyWJYz8QHaFj?pid=Api&P=0&h=180')">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.bibA5oMY6WYu_uvyWJYz8QHaFj?pid=Api&P=0&h=180" alt="Headphones">
+                <h3>Headphones</h3>
+                <p>$199</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Smartwatch', 'Track your activities.', '$149', 'https://tse4.mm.bing.net/th/id/OIP.0oS8z1bZrbPwtgi34MgQ2wAAAA?pid=Api&P=0&h=180')">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.0oS8z1bZrbPwtgi34MgQ2wAAAA?pid=Api&P=0&h=180" alt="Smartwatch">
+                <h3>Smartwatch</h3>
+                <p>$149</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Camera', 'High-resolution DSLR camera.', '$499', 'https://tse1.mm.bing.net/th/id/OIP.pCWLFWTXqVqZkcROnUq5FQHaE8?pid=Api&P=0&h=180')">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.pCWLFWTXqVqZkcROnUq5FQHaE8?pid=Api&P=0&h=180" alt="Camera">
+                <h3>Camera</h3>
+                <p>$499</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Tablet', 'Portable and lightweight tablet.', '$299', 'https://tse3.mm.bing.net/th/id/OIP.6eTm9m0H5BtUCymOMhwqbQHaFy?pid=Api&P=0&h=180')">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.6eTm9m0H5BtUCymOMhwqbQHaFy?pid=Api&P=0&h=180" alt="Tablet">
+                <h3>Tablet</h3>
+                <p>$299</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Bluetooth Speaker', 'Portable and powerful sound.', '$89', 'https://tse4.mm.bing.net/th/id/OIP.TUtqhlRqOZXursfqG2OBMwHaHa?pid=Api&P=0&h=180')">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.TUtqhlRqOZXursfqG2OBMwHaHa?pid=Api&P=0&h=180" alt="Bluetooth Speaker">
+                <h3>Bluetooth Speaker</h3>
+                <p>$89</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Monitor', 'High-definition computer monitor.', '$229', 'https://tse3.mm.bing.net/th/id/OIP.OdJVA3dRc-YiIh6FMi13SwHaHa?pid=Api&P=0&h=180')">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.OdJVA3dRc-YiIh6FMi13SwHaHa?pid=Api&P=0&h=180" alt="Monitor">
+                <h3>Monitor</h3>
+                <p>$229</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Keyboard', 'Mechanical keyboard with RGB lights.', '$79', 'https://tse1.mm.bing.net/th/id/OIP.0J3dkAhHQfqKTc41bz3yUgHaEJ?pid=Api&P=0&h=180')">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.0J3dkAhHQfqKTc41bz3yUgHaEJ?pid=Api&P=0&h=180" alt="Keyboard">
+                <h3>Keyboard</h3>
+                <p>$79</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Router', 'High-speed wireless router.', '$59', 'https://tse4.mm.bing.net/th/id/OIP.jWlakCD3GEuf-z0QEQR3kwHaFu?pid=Api&P=0&h=180')">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.jWlakCD3GEuf-z0QEQR3kwHaFu?pid=Api&P=0&h=180" alt="Router">
+                <h3>Router</h3>
+                <p>$59</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+            <div class="food-item" onclick="showLargeView('Smart TV', 'Ultra HD smart television.', '$799', 'https://tse4.mm.bing.net/th/id/OIP.A-pADhjnjMA-sHt8EuKWFwHaGs?pid=Api&P=0&h=180')">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.A-pADhjnjMA-sHt8EuKWFwHaGs?pid=Api&P=0&h=180" alt="Smart TV">
+                <h3>Smart TV</h3>
+                <p>$799</p>
+                <div class="buttons">
+                    <button onclick="likeFood(event)">Like ❤️</button>
+                    <button onclick="orderFood(event)">Order</button>
+                    <button onclick="addToCart(event)">Add to Cart 🛒</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showLargeView(name, ingredients, price, imageUrl) {
+            document.getElementById('largeImage').src = imageUrl;
+            document.getElementById('largeName').innerText = name + " - " + price;
+            document.getElementById('largeIngredients').innerText = ingredients;
+            document.getElementById('largeDisplay').style.display = 'block';
+        }
+
+        function closeLargeView() {
+            document.getElementById('largeDisplay').style.display = 'none';
+        }
+
+        function likeFood(event) {
+            event.stopPropagation();
+            alert("You liked this item!");
+        }
+
+        function orderFood(event) {
+            event.stopPropagation();
+            alert("Order placed!");
+        }
+
+        function addToCart(event) {
+            event.stopPropagation();
+            alert("Added to cart!");
+        }
+    let cart = [];
+    let totalAmount = 0;
+
+    function showLargeView(name, ingredients, price, imageUrl) {
+        document.getElementById('largeImage').src = imageUrl;
+        document.getElementById('largeName').innerText = name + " - " + price;
+        document.getElementById('largeIngredients').innerText = ingredients;
+        document.getElementById('largeDisplay').style.display = 'block';
+    }
+
+    function closeLargeView() {
+        document.getElementById('largeDisplay').style.display = 'none';
+    }
+
+    function likeFood(event) {
+        event.stopPropagation();
+        alert("You liked this item!");
+    }
+
+    function orderFood(event) {
+        event.stopPropagation();
+        alert("Order placed!");
+    }
+
+    function addToCart(event) {
+        event.stopPropagation();
+        
+        const item = event.target.closest('.food-item');
+        const name = item.querySelector('h3').innerText;
+        const priceText = item.querySelector('p').innerText;
+        const price = parseFloat(priceText.replace('$',''));
+        
+        cart.push({ name, price });
+        totalAmount += price;
+        
+        alert(`${name} added to cart! Total: $${totalAmount.toFixed(2)}`);
+        
+        updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+        let cartDiv = document.getElementById('cartDisplay');
+        
+        if (!cartDiv) {
+            cartDiv = document.createElement('div');
+            cartDiv.id = 'cartDisplay';
+            cartDiv.style.position = 'fixed';
+            cartDiv.style.bottom = '20px';
+            cartDiv.style.right = '20px';
+            cartDiv.style.backgroundColor = '#fff';
+            cartDiv.style.padding = '10px 20px';
+            cartDiv.style.border = '1px solid #ccc';
+            cartDiv.style.borderRadius = '8px';
+            cartDiv.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+            cartDiv.style.fontFamily = 'Arial, sans-serif';
+            document.body.appendChild(cartDiv);
+        }
+        
+        let html = '<h4>Cart</h4><ul>';
+        cart.forEach(item => {
+            html += `<li>${item.name} - $${item.price.toFixed(2)}</li>`;
+        });
+        html += `</ul><strong>Total: $${totalAmount.toFixed(2)}</strong>`;
+        
+        cartDiv.innerHTML = html;
+    }
+
+    </script>
+</body>
+</html>
